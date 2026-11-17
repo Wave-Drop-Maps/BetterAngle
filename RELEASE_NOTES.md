@@ -1,3 +1,7 @@
+### BetterAngle Pro v7.0.2
+- **Moved to the Wave Drop Maps organization**. BetterAngle now lives at `github.com/Wave-Drop-Maps/BetterAngle`. The updater, installer and README use the new address.
+- **Cleanup**: Removed one-off logo scripts, an unused release script and an out-of-date local build script. The development policy is now `CONTRIBUTING.md`, and the README has been rewritten.
+
 ### BetterAngle Pro v7.0.1
 _First full release of the 7.x line (v7.0.0 went out as a pre-release by mistake; this is the same build). v6.0.5 and v6.0.6 were never released, so this includes everything below._
 - **Fix: Release build**. CI now builds with Ninja and a small compatibility shim so Qt 6.5 builds with the runner's Visual Studio 2026. A version set by hand in `VERSION` is now released as-is.

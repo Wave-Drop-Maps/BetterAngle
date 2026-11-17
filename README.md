@@ -1,43 +1,59 @@
 # BetterAngle Pro
 
-A high-performance, low-latency angle tracker and FOV detection overlay for Windows.
-## 🔧 How to use
-- **Step 1:** Input your sensitivity from Fortnite
-- **Step 2:** Hop into a Fortnite match and hit the Select ROI key. Select the area of the screen with the text (Make sure to add some extra room). Select the color you want to track (white in the text)
-- **Step 3:** Change the Percent to Match how much of the area.
+An open-source overlay for Windows that shows your exact compass angle in Fortnite, to the decimal.
 
+BetterAngle reads your mouse movement straight from the hardware and turns it into degrees using your
+in-game sensitivity. It never reads or changes the game's memory or files.
 
-- **Low-End Hardware Support**: Minimal RAM (<60MB) and CPU usage (~0.5%).
-- **Connected Updates**: Automated builds and releases via GitHub Actions.
-- **Zero Latency**: Direct Win32 Raw Input and GDI+ rendering.
+## Download
 
-## 🛠 Features
-- **Raw Input Tracking**: Captures mouse delta directly from the hardware.
-- **ROI FOV Detector**: Automatically detects game states (Dive/Glide) using high-speed pixel scanning.
-- **Transition Modes**: Choose how dive/glide transitions are handled — *Block input* (exact angle) or *Blend* (never touches your input; angle estimated if you move mid-transition). See [docs/INPUT_LOCK.md](docs/INPUT_LOCK.md).
-- **Transparent Overlay**: Click-through, topmost UI that doesn't interfere with gameplay.
-- **Auto-Updater**: Automatically stays up-to-date with the latest releases from GitHub.
-- **Auto-Installer**: Automatically installs the latest version of the software.
-- **No Ban Risk**: Doesn't touch the game files or memory.
+Get the latest installer, `BetterAngle_Setup.exe`, from the
+**[Releases](https://github.com/Wave-Drop-Maps/BetterAngle/releases/latest)** page.
+Once installed, the app keeps itself up to date.
 
-## ⚠️ Warning
-- **this tool does not provide any advantages**
-- **do not use this software in competitive matches**
-- **do not use this software in tournaments**
-- **we are not responsible for any bans or consequences**
+## How to use
 
-## 📦 Download
-Check the **[Releases](https://github.com/wavedropmaps/BetterAngle/releases)** page for the latest `BetterAngle.exe`.
+1. Enter your Fortnite sensitivity.
+2. In a match, press the **Select ROI** key and drag a box around the on-screen text BetterAngle should watch
+   (leave a little extra room). Then pick the colour to track (the white of the text).
+3. Adjust **Percent** to how much of that area the text fills.
 
-## ⚙️ Development
-1. Clone the repository: `git clone https://github.com/wavedropmaps/BetterAngle.git`
-2. Install Visual Studio 2022 (MSVC) and Qt 6.5.3 (`win64_msvc2019_64`).
-3. Configure and build with CMake:
-   ```
-   cmake -B build -G "Visual Studio 17 2022" -A x64
-   cmake --build build --config Release
-   ```
-Releases are built by GitHub Actions on every push to `main` (see `PROJECT_POLICY.md`).
+## Features
+
+- **Raw input tracking**: mouse movement is read directly from the hardware.
+- **Dive and glide detection**: fast pixel scanning of the area you chose tells skydiving from gliding,
+  so the right turn speed is used.
+- **Transition modes**: choose how dive/glide changes are handled: *Block input* (exact angle) or
+  *Blend* (never touches your input). See [docs/INPUT_LOCK.md](docs/INPUT_LOCK.md).
+- **Transparent overlay**: click-through and always on top, so it stays out of your way.
+- **Automatic updates**: new releases install themselves.
+- **Light on resources**: under 60 MB of memory and around 0.5% CPU.
+
+## Fair play
+
+- BetterAngle does not read or change game memory or files.
+- Do not use it in competitive matches or tournaments.
+- You use it at your own risk. The authors are not responsible for any account action.
+
+## Building from source
+
+Requirements: Visual Studio 2022 or later (MSVC), CMake, Ninja and Qt 6.5.3 (`win64_msvc2019_64`).
+
+```
+git clone https://github.com/Wave-Drop-Maps/BetterAngle.git
+cd BetterAngle
+cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+```
+
+Run these from a *Developer PowerShell for Visual Studio* so MSVC is on the path. Official releases are built by
+GitHub Actions; see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+Free for personal, educational and non-commercial use. See [LICENSE](LICENSE).
 
 ---
-*Created by [Fruss](https://github.com/wavedropmaps) & [MahanYTT](https://github.com/MahanYTT) & [itsdolphin](https://github.com/byu163) with ❤️*
+
+Made by [Fruss](https://github.com/wavedropmaps), [MahanYTT](https://github.com/MahanYTT) and
+[itsdolphin](https://github.com/byu163) for [Wave Drop Maps](https://github.com/Wave-Drop-Maps).

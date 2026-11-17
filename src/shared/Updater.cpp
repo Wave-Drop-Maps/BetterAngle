@@ -10,13 +10,13 @@
 #pragma comment(lib, "wininet.lib")
 
 const wchar_t *VERSION_URL =
-    L"https://api.github.com/repos/wavedropmaps/BetterAngle/releases/latest";
+    L"https://api.github.com/repos/Wave-Drop-Maps/BetterAngle/releases/latest";
 // Beta: /releases list sorted newest-first, includes pre-releases
 const wchar_t *RELEASES_LIST_URL =
-    L"https://api.github.com/repos/wavedropmaps/BetterAngle/releases?per_page=1";
+    L"https://api.github.com/repos/Wave-Drop-Maps/BetterAngle/releases?per_page=1";
 const wchar_t *MIN_STABLE_URL =
-    L"https://raw.githubusercontent.com/wavedropmaps/BetterAngle/main/MIN_STABLE_VERSION";
-const wchar_t *DOWNLOAD_URL = L"https://github.com/wavedropmaps/BetterAngle/"
+    L"https://raw.githubusercontent.com/Wave-Drop-Maps/BetterAngle/main/MIN_STABLE_VERSION";
+const wchar_t *DOWNLOAD_URL = L"https://github.com/Wave-Drop-Maps/BetterAngle/"
                               L"releases/latest/download/BetterAngle_Setup.exe";
 
 static DWORD HttpStatus(HINTERNET hUrl) {
@@ -294,7 +294,7 @@ void ApplyUpdateAndRestart() {
 
   auto openReleasePage = []() {
     ShellExecuteW(NULL, L"open",
-                  L"https://github.com/wavedropmaps/BetterAngle/releases", NULL,
+                  L"https://github.com/Wave-Drop-Maps/BetterAngle/releases", NULL,
                   NULL, SW_SHOWNORMAL);
   };
 
